@@ -1,27 +1,38 @@
-# TeleFlash
-## ⚡ Telegram News Scraper & Summarizer
+<h1 align="center">TeleFlash</h1>
 
-![teleflash-logo](teleflash-logo.png)
+<p align="center">
+  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="160">
+</p>
+
+## ⚡ Telegram News Scraper & Summarizer
 
 Simple tool to fetch Telegram channel posts, save to PostgreSQL, pick Finland-related items, summarize with OpenAI, and post to Slack.
 
+---
+
 ## 🔥 Features
-- 📥 Daily fetch of channel info & posts  
-- 🗄️ Store data with SQLAlchemy/PostgreSQL  
-- 🔍 Regex filter for Finland keywords  
-- 🤖 AI summaries in English & Finnish  
-- 💬 Post reports to Slack  
-- ⏰ Scheduler runs daily at 06:00  
+
+- 📥 Fetch channel info & posts daily
+- 🗄️ Store data with SQLAlchemy & PostgreSQL
+- 🇫🇮 **Smart Finland-topic search:** Finds messages about Finland by scanning for country names, place names, and related keywords in English, Russian, and Ukrainian
+- 🤖 AI summaries in English & Finnish
+- 💬 Post reports automatically to Slack
+- ⏰ Scheduler runs daily at 06:00
+
+---
 
 ## ⚙️ Installation
-1. git clone …  
-2. copy `teleflash-logo.png` to repo root  
-3. `cp .env.example .env` & fill in creds  
-4. `pip install -r requirements.txt`  
+
+1. Clone this repo  
+2. Create a `.env` file & fill in credentials (see below)  
+3. `pip install -r requirements.txt`  
+
+---
 
 ## 🛠️ Configuration
-In `.env`:
-```
+
+Add a `.env` file like this:
+
 API_ID=…
 API_HASH=…
 PHONE=…
@@ -35,33 +46,51 @@ SLACK_BOT_TOKEN=…
 SLACK_CHANNEL_ID=…
 ```
 
-## 🚀 Usage
-- `channel_content.py` – scrape channels & save to DB  
-- `teleflash.py` – filter, summarize & post to Slack  
-- `scheduler.py` – run both daily at 06:00  
+---
 
-Run manually:
+## 🚀 Usage
+
+- `channel_content.py` – Scrape channels & save posts to DB  
+- `teleflash.py` – Find Finland topics, summarize & post to Slack  
+- `scheduler.py` – Run both scripts every day at 06:00  
+
+**Manual run:**
 ```
 python channel_content.py
 python teleflash.py
 ```
 
-Or start scheduler:
+**Or start the scheduler (recommended):**
 ```
 python scheduler.py
 ```
 
+---
+
 ## 📁 File Overview
-- init.py – Telethon setup & helpers  
-- channel_content.py – scrape & save posts  
-- teleflash.py – filter, summarize & Slack  
-- scheduler.py – daily runner  
-- models.py – ORM models  
-- requirements.txt – deps  
+
+- `init.py` – Telethon connection & helpers
+- `channel_content.py` – Scrape & save posts
+- `teleflash.py` – Filter, summarize & Slack
+- `scheduler.py` – Daily runner
+- `models.py` – Database models
+- `requirements.txt` – Dependencies
+
+---
 
 ## 🤝 Funded by Media-alan tutkimussäätiö
 
-## 👥 Team
-- Vasileios Maltezos ‹vasileios.maltezos@helsinki.fi›  
-- Roman Kyrychenko ‹roman.kyrychenko@helsinki.fi›  
-- Aleksi Knuutila ‹aleksi.knuutila@helsinki.fi›  
+
+## 👥 Our Team
+
+<table>
+  <tr>
+    <td><b>Vasileios Maltezos</b><br><a href="mailto:vasileios.maltezos@helsinki.fi">vasileios.maltezos@helsinki.fi</a></td>
+  </tr>
+  <tr>
+    <td><b>Roman Kyrychenko</b><br><a href="mailto:roman.kyrychenko@helsinki.fi">roman.kyrychenko@helsinki.fi</a></td>
+  </tr>
+  <tr>
+    <td><b>Aleksi Knuutila</b><br><a href="mailto:aleksi.knuutila@helsinki.fi">aleksi.knuutila@helsinki.fi</a></td>
+  </tr>
+</table>
