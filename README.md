@@ -1,107 +1,103 @@
-<h1 align="center">TeleFlash</h1>
+# TeleFlash
 
 <p align="center">
-  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="140">
+  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="400">
 </p>
 
-## ⚡ Telegram News Scraper & Summarizer
-
-Simple tool to fetch Telegram channel posts, save to PostgreSQL, find Finland-related items, summarize with OpenAI, and post results to Slack.
+<p align="center">
+  <strong>A Telegram News Scraper & Summarizer</strong><br>
+  Fetch Telegram channel posts, store them in PostgreSQL, identify Finland-related content, summarize with OpenAI, and share results on Slack.
+</p>
 
 ---
 
-## 🔥 Features
+## ⚡ Features
 
-- 📥 **Automatic Daily Fetch:** Collects channel info and latest posts every morning.
-- 🗄️ **Robust Storage:** Saves all data using SQLAlchemy and PostgreSQL.
-- 🇫🇮 **Smart Finland-topic Detection:** Finds posts mentioning Finland by searching for keywords and place names in English, Russian, and Ukrainian (e.g. "Finland", "Suomi", "Финляндия", etc).
-- 🤖 **AI Summaries:** Uses OpenAI to summarize findings in both English and Finnish.
-- 💬 **Slack Reporting:** Posts structured summaries and message stats to Slack.
-- ⏰ **Hands-free Operation:** Scheduler runs the process automatically every day at 06:00.
+- **📥 Automatic Daily Fetch**: Scrapes channel info and posts every morning at 06:00.
+- **🗄️ Robust Storage**: Saves data securely using SQLAlchemy and PostgreSQL.
+- **🇫🇮 Smart Finland Detection**: Identifies posts mentioning Finland using keywords in English, Russian, and Ukrainian (e.g., "Finland", "Suomi", "Финляндия", ...).
+- **🤖 AI-Powered Summaries**: Generates summaries in English and Finnish using OpenAI.
+- **💬 Slack Integration**: Posts structured summaries and message statistics to Slack.
+- **⏰ Hands-Free Operation**: Scheduler automates the process daily.
 
 ---
 
 ## ⚙️ Installation
 
-1. Clone this repository  
-2. Create a `.env` file and add your credentials (see below)  
-3. Install dependencies:  
-pip install -r requirements.txt
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd teleflash
+   ```
 
-text
+2. **Set Up Environment**:
+   Create a `.env` file in the project root with the following variables:
+   ```
+   API_ID=your_api_id
+   API_HASH=your_api_hash
+   PHONE=your_phone_number
+   SESSION_FILE=session.session
+   DB_USER=your_db_user
+   DB_PASSWORD=your_db_password
+   DB_HOST=your_db_host
+   DB_NAME=your_db_name
+   OPENAI_API_KEY=your_openai_api_key
+   SLACK_BOT_TOKEN=your_slack_bot_token
+   SLACK_CHANNEL_ID=your_slack_channel_id
+   ```
 
----
-
-## 🛠️ Configuration
-
-Create a `.env` file with the following variables:
-
-API_ID=…
-API_HASH=…
-PHONE=…
-SESSION_FILE=session.session
-DB_USER=…
-DB_PASSWORD=…
-DB_HOST=…
-DB_NAME=…
-OPENAI_API_KEY=…
-SLACK_BOT_TOKEN=…
-SLACK_CHANNEL_ID=…
-
-text
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ---
 
 ## 🚀 Usage
 
-- `channel_content.py` – Scrape Telegram channels and save posts to the database  
-- `teleflash.py` – Filter, summarize Finland-related messages & post summaries to Slack  
-- `scheduler.py` – Runs both scripts every day at 06:00  
+### Scripts
+- **`channel_content.py`**: Scrapes Telegram channels and stores posts in the database.
+- **`teleflash.py`**: Filters Finland-related posts, summarizes them, and posts to Slack.
+- **`scheduler.py`**: Runs both scripts daily at 06:00.
 
-**To run manually:**
+### Manual Execution
+Run the scripts individually:
+```bash
 python channel_content.py
 python teleflash.py
+```
 
-text
-
-**Or start the automatic scheduler:**
+### Automatic Execution
+Start the scheduler for automated daily runs:
+```bash
 python scheduler.py
-
-text
+```
 
 ---
 
 ## 📁 File Overview
 
-- `init.py` – Telethon connection & helpers  
-- `channel_content.py` – Scraping and DB save logic  
-- `teleflash.py` – Filtering, summarizing, and posting to Slack  
-- `scheduler.py` – Daily runner script  
-- `models.py` – SQLAlchemy ORM models  
-- `requirements.txt` – Dependencies
+| File                  | Description                              |
+|-----------------------|------------------------------------------|
+| `init.py`             | Telethon connection and helper functions |
+| `channel_content.py`  | Logic for scraping and saving to DB      |
+| `teleflash.py`        | Filtering, summarizing, and Slack posting|
+| `scheduler.py`        | Daily automation script                  |
+| `models.py`           | SQLAlchemy ORM models                    |
+| `requirements.txt`    | Project dependencies                     |
 
 ---
 
-## 🤝 Funded by Media-alan tutkimussäätiö
+## 🤝 Funding
+
+This project is proudly funded by **Media-alan tutkimussäätiö**.
 
 ---
 
 ## 👥 Our Team
 
-<table>
-  <tr>
-    <td align="center"><b>Vasileios Maltezos</b><br>
-      <a href="mailto:vasileios.maltezos@helsinki.fi">vasileios.maltezos@helsinki.fi</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Roman Kyrychenko</b><br>
-      <a href="mailto:roman.kyrychenko@helsinki.fi">roman.kyrychenko@helsinki.fi</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Aleksi Knuutila</b><br>
-      <a href="mailto:aleksi.knuutila@helsinki.fi">aleksi.knuutila@helsinki.fi</a>
-    </td>
-  </tr>
-</table>
+| Name                  | Contact                                  |
+|-----------------------|------------------------------------------|
+| **Vasileios Maltezos** | [vasileios.maltezos@helsinki.fi](mailto:vasileios.maltezos@helsinki.fi) |
+| **Roman Kyrychenko**   | [roman.kyrychenko@helsinki.fi](mailto:roman.kyrychenko@helsinki.fi)     |
+| **Aleksi Knuutila**    | [aleksi.knuutila@helsinki.fi](mailto:aleksi.knuutila@helsinki.fi)       |
