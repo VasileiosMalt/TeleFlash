@@ -1,37 +1,40 @@
 <h1 align="center">TeleFlash</h1>
 
 <p align="center">
-  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="400">
+  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="140">
 </p>
 
 ## ⚡ Telegram News Scraper & Summarizer
 
-Simple tool to fetch Telegram channel posts, save to PostgreSQL, pick Finland-related items, summarize with OpenAI, and post to Slack.
+Simple tool to fetch Telegram channel posts, save to PostgreSQL, find Finland-related items, summarize with OpenAI, and post results to Slack.
 
 ---
 
 ## 🔥 Features
 
-- 📥 Fetch channel info & posts daily
-- 🗄️ Store data with SQLAlchemy & PostgreSQL
-- 🇫🇮 **Smart Finland-topic search:** Finds messages about Finland by scanning for country names, place names, and related keywords in English, Russian, and Ukrainian
-- 🤖 AI summaries in English & Finnish
-- 💬 Post reports automatically to Slack
-- ⏰ Scheduler runs daily at 06:00
+- 📥 **Automatic Daily Fetch:** Collects channel info and latest posts every morning.
+- 🗄️ **Robust Storage:** Saves all data using SQLAlchemy and PostgreSQL.
+- 🇫🇮 **Smart Finland-topic Detection:** Finds posts mentioning Finland by searching for keywords and place names in English, Russian, and Ukrainian (e.g. "Finland", "Suomi", "Финляндия", etc).
+- 🤖 **AI Summaries:** Uses OpenAI to summarize findings in both English and Finnish.
+- 💬 **Slack Reporting:** Posts structured summaries and message stats to Slack.
+- ⏰ **Hands-free Operation:** Scheduler runs the process automatically every day at 06:00.
 
 ---
 
 ## ⚙️ Installation
 
-1. Clone this repo  
-2. Create a `.env` file & fill in credentials (see below)  
-3. `pip install -r requirements.txt`  
+1. Clone this repository  
+2. Create a `.env` file and add your credentials (see below)  
+3. Install dependencies:  
+pip install -r requirements.txt
+
+text
 
 ---
 
 ## 🛠️ Configuration
 
-Add a `.env` file like this:
+Create a `.env` file with the following variables:
 
 API_ID=…
 API_HASH=…
@@ -44,53 +47,61 @@ DB_NAME=…
 OPENAI_API_KEY=…
 SLACK_BOT_TOKEN=…
 SLACK_CHANNEL_ID=…
-```
+
+text
 
 ---
 
 ## 🚀 Usage
 
-- `channel_content.py` – Scrape channels & save posts to DB  
-- `teleflash.py` – Find Finland topics, summarize & post to Slack  
-- `scheduler.py` – Run both scripts every day at 06:00  
+- `channel_content.py` – Scrape Telegram channels and save posts to the database  
+- `teleflash.py` – Filter, summarize Finland-related messages & post summaries to Slack  
+- `scheduler.py` – Runs both scripts every day at 06:00  
 
-**Manual run:**
-```
+**To run manually:**
 python channel_content.py
 python teleflash.py
-```
 
-**Or start the scheduler (recommended):**
-```
+text
+
+**Or start the automatic scheduler:**
 python scheduler.py
-```
+
+text
 
 ---
 
 ## 📁 File Overview
 
-- `init.py` – Telethon connection & helpers
-- `channel_content.py` – Scrape & save posts
-- `teleflash.py` – Filter, summarize & Slack
-- `scheduler.py` – Daily runner
-- `models.py` – Database models
+- `init.py` – Telethon connection & helpers  
+- `channel_content.py` – Scraping and DB save logic  
+- `teleflash.py` – Filtering, summarizing, and posting to Slack  
+- `scheduler.py` – Daily runner script  
+- `models.py` – SQLAlchemy ORM models  
 - `requirements.txt` – Dependencies
 
 ---
 
 ## 🤝 Funded by Media-alan tutkimussäätiö
 
+---
 
 ## 👥 Our Team
 
 <table>
   <tr>
-    <td><b>Vasileios Maltezos</b><br><a href="mailto:vasileios.maltezos@helsinki.fi">vasileios.maltezos@helsinki.fi</a></td>
+    <td align="center"><b>Vasileios Maltezos</b><br>
+      <a href="mailto:vasileios.maltezos@helsinki.fi">vasileios.maltezos@helsinki.fi</a>
+    </td>
   </tr>
   <tr>
-    <td><b>Roman Kyrychenko</b><br><a href="mailto:roman.kyrychenko@helsinki.fi">roman.kyrychenko@helsinki.fi</a></td>
+    <td align="center"><b>Roman Kyrychenko</b><br>
+      <a href="mailto:roman.kyrychenko@helsinki.fi">roman.kyrychenko@helsinki.fi</a>
+    </td>
   </tr>
   <tr>
-    <td><b>Aleksi Knuutila</b><br><a href="mailto:aleksi.knuutila@helsinki.fi">aleksi.knuutila@helsinki.fi</a></td>
+    <td align="center"><b>Aleksi Knuutila</b><br>
+      <a href="mailto:aleksi.knuutila@helsinki.fi">aleksi.knuutila@helsinki.fi</a>
+    </td>
   </tr>
 </table>
