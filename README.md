@@ -1,7 +1,5 @@
-# TeleFlash
-
 <p align="center">
-  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="400">
+  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="300">
 </p>
 
 <p align="center">
@@ -72,6 +70,40 @@ Start the scheduler for automated daily runs:
 ```bash
 python scheduler.py
 ```
+---
+
+## 📢 Current List of Channels
+
+The scraper currently monitors **the following Telegram channels** (usernames):
+
+<details>
+<summary>Click to expand</summary>
+
+`severnygorod`, `agapov_fi`, `karaulny`, `rusbrief`, `octgnews`, `tass_agency`, `baltnews`, `fontankaspb`, `dprunews`, `sp_1703`, `glavmedia`, `houseofcardseurope`, `good78news`, `rian_ru`, `belta_telegramm`, `radiogovoritmsk`, `bbbreaking`, `paperpaper_ru`, `nevnov`, `swodki`, `vzglyad_ru`, `parstodayrussian`, `ukraina_ru`, `solovievlive`, `rossiyaneevropa`, `online47news`, `riafan`, `radiomirby`, `dirtytatarstan`, `rgrunews`, `inosmichannel`, `sputnikby`, `rbc_news`, `ssigny`, `boyart777`, `lentadnya`, `radiosvoboda`, `kommersant`, `topspb_tv`, `allnews47`, `rt_russian`, `absatzmedia`, `match_tv`, `truekpru`, `bbcrussian`, `houseofcardsrussia`, `OdessaRussi`, `Novoeizdanie`, `rus_demiurge`, `stranaua`, `rbc_brief`, `aifonline`, `ostashkonews`, `dimsmirnov175`, `ateobreaking`, `infantmilitario`, `UAnotRU`, `smotri_media`, `thehandofthekremlin`, `leningrad_guide`, `izvestia`, `meduzalive`, `highlylikely20`, `rentv_news`, `znua_live`, `atn_btrc`, `vestiru24`, `chvkmedia`, `espresotb`, `kshulika`, `orientsouthrus`, `dwglavnoe`, `ZOVcrimea`, `Belarus_VPO`, `readovkanews`, `ranarod`, `gazetaru`, `nexta_live`, `ntvnews`, `uniannet`, `lady_north`, `fuckyouthatswhy`, `nstarikovru`, `new_militarycolumnist`, `mk_ru`, `lab365`, `go338`, `postovo`, `asphaltt`, `politkraina`, `rlz_the_kraken`, `ru2ch`, `bfmnews`, `russtrat`, `tv360`, `radio_sputnik`, `minut30`, `pluanews`, `rtvinews`, `interfaxonline`, `istorijaoruzijaz`, `currenttime`, `sputniklive`, `newsgrpua`, `srochnow`, `ukrpravda_news`, `first_political`, `oldlentach`, `RUSanctions`, `Pravda_Gerashchenko`, `warhistoryalconafter`, `ivan_utenkov13`, `TCH_channel`, `the_moscow_post`, `UkraineNow`, `openukraine`, `ukr_shvydko`, `lentachold`, `huyovy_kharkiv`, `kontext_channel`, `russica2`, `tvrain`, `operativnozsu`, `rus_now_news`, `voynareal`, `lachentyt`, `russianonwars`, `dmytrogordon_official`, `banksta`, `TolkoPoDely`, `rybar`, `rhymestg`, `ragnarockkyiv`, `ukraina24tv`, `bankrollo`, `truexanewsua`, `sheyhtamir1974`, `aleksandrsemchenko`, `tsaplienko`, `varlamov_news`, `DavydovIn`, `boris_rozhin`, `RVvoenkor`, `redacted6`, `zerkalo_io`, `voenacher`, `Mikle1On`, `UaOnlii`, `vchkogpu`, `kaktovottak`, `novosti_efir`, `shot_shot`, `insiderUKR`, `slavaded1337`, `bloodysx`, `breakingmash`, `readovkaru`, `ostorozhno_novosti`, `okoo_ukr`, `Cbpub`, `warfakes`, `montyan2`, `moscowmap`, `asupersharij`, `nevzorovtv`, `V_Zelenskiy_official`, `yurasumy`
+
+</details>
+
+---
+
+### ✏️ How to Change This List
+
+1. **Open `channel_content.py` and `teleflash.py`:**
+   - The channel list is defined as a Python list named `channels` or `channels_list` near the top of each file.
+
+2. **Edit the List:**  
+   - Add or remove channel usernames as needed – just like editing a Python array.
+   - Example:
+     ```
+     channels = [
+         'severnygorod', 'agapov_fi', 'karaulny',  # etc.
+         # 'channel_to_remove',
+         'some_new_channel'
+     ]
+     ```
+
+3. **Save and Restart:**  
+   - Save your changes.
+   - The next time you run the scripts (or the daily scheduler runs), your updated channel list will be used!
 
 ---
 
