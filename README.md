@@ -1,7 +1,7 @@
 <h1 align="center">TeleFlash</h1>
 
 <p align="center">
-  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="160">
+  <img src="teleflash-logo.png" alt="TeleFlash Logo" width="400">
 </p>
 
 ## ⚡ Telegram News Scraper & Summarizer
