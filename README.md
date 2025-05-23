@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <strong>A Telegram News Scraper & Summarizer</strong><br>
-  Fetch Telegram channel posts, store them in PostgreSQL, identify Finland-related content, summarize with OpenAI, and share results on Slack.
+  <strong>A Telegram News Scraper & Summarizer (Functioning Prototype)</strong><br>
+  Monitor specific channels and fetch Telegram channel posts, store them in PostgreSQL, identify Finland-related content, summarize with OpenAI, and share results on Slack.
 </p>
 
 ---
@@ -13,7 +13,7 @@
 
 - **📥 Automatic Daily Fetch**: Scrapes channel info and posts every morning at 06:00.
 - **🗄️ Robust Storage**: Saves data securely using SQLAlchemy and PostgreSQL.
-- **🇫🇮 Smart Finland Detection**: Identifies posts mentioning Finland using keywords in English, Russian, and Ukrainian (e.g., "Finland", "Suomi", "Финляндия", ...).
+- **🇫🇮 Smart Detection**: Identifies posts mentioning Finland using keywords in English, Russian, and Ukrainian (e.g., "Finland", "Suomi", "Финляндия", ...).
 - **🤖 AI-Powered Summaries**: Generates summaries in English and Finnish using OpenAI.
 - **💬 Slack Integration**: Posts structured summaries and message statistics to Slack.
 - **⏰ Hands-Free Operation**: Scheduler automates the process daily.
@@ -131,5 +131,5 @@ This project is proudly funded by **Media-alan tutkimussäätiö**.
 | Name                  | Contact                                  |
 |-----------------------|------------------------------------------|
 | **Vasileios Maltezos** | [vasileios.maltezos@helsinki.fi](mailto:vasileios.maltezos@helsinki.fi) |
-| **Roman Kyrychenko**   | [roman.kyrychenko@helsinki.fi](mailto:roman.kyrychenko@helsinki.fi)     |
-| **Aleksi Knuutila**    | [aleksi.knuutila@helsinki.fi](mailto:aleksi.knuutila@helsinki.fi)       |
+| **Roman Kyrychenko**   | [GitHub account](https://github.com/RomanKyrychenko)     |
+| **Aleksi Knuutila**    | [GitHub account](https://github.com/AleksiKnuutila)       |
